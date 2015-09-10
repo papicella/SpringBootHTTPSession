@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>IBM Bluemix - Spring Boot HTTPSession Demo</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Latest compiled and minified CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://bluemix.net/">
+                <img src="images/bluemix-small.png"
+                     th:src="@{images/bluemix-small.png}"
+                     alt="Bluemix"
+                     border="0"/>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right  ">
+                <li><a href="/" >Home</a></li>
+                <li><a th:href="@{/killme}">Kill Me</a></li>
+                <li><a href="http://spring.io">String Boot</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- NAVBAR CODE END -->
+
+
+<div class="bs-example">
+    <div class="page-header">
+        <h1>IBM Bluemix <small>Spring Boot HTTPSession Demo</small> </h1>
+    </div>
+</div>
+
+<div class="bs-example">
+    <form th:action="@{/addName}" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label for="name" class="control-label col-xs-2">Latitude</label>
+            <div class="col-xs-6">
+                <input type="text" class="form-control" id="name" name="name" value=""
+                       placeholder="Name to add to List" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-primary">Add Name</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="bs-example" th:if="${nameList}">
+    <div class="alert alert-info fade in">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <strong>Success!</strong> Found <b th:text="${namesSize}"></b> Names in the HTTPSession
+    </div>
+    <h3>Names</h3>
+    <div class="col-xs-6">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="name : ${nameList}" class="danger">
+                <td th:text="${name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

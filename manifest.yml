@@ -1,0 +1,10 @@
+applications:
+ - name: pas-sbsessions
+   memory: 512M
+   instances: 2
+   path: ./target/SpringBootHTTPSession-0.0.1-SNAPSHOT.jar
+   host: pas-sbsessions
+   domain: mybluemix.net
+   buildpack: java_buildpack
+   services:
+    - redis-session
