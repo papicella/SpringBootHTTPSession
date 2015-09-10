@@ -41,7 +41,7 @@
             <ul class="nav navbar-nav navbar-right  ">
                 <li><a href="/" >Home</a></li>
                 <li><a th:href="@{/killme}">Kill Me</a></li>
-                <li><a href="http://spring.io">String Boot</a></li>
+                <li><a href="http://spring.io">Spring Boot</a></li>
             </ul>
         </div>
 
@@ -59,7 +59,7 @@
 <div class="bs-example">
     <form th:action="@{/addName}" method="post" class="form-horizontal">
         <div class="form-group">
-            <label for="name" class="control-label col-xs-2">Latitude</label>
+            <label for="name" class="control-label col-xs-2">Name</label>
             <div class="col-xs-6">
                 <input type="text" class="form-control" id="name" name="name" value=""
                        placeholder="Name to add to List" />
