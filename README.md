@@ -10,6 +10,8 @@ It acts as a sort of proxy in front of the HTTP session that forwards requests t
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://hub.jazz.net/project/pasapples/SpringBootHTTPSession)
 
+<a href="https://bluemix.net/deploy?repository=https://hub.jazz.net/project/pasapples/SpringBootHTTPSession" target="_blank"><img src="http://bluemix.net/deploy/button.png" alt="Bluemix button" /></a>
+
 <h2>Run locally</h2> 
 
 - Clone code as shown below.
