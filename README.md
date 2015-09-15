@@ -8,6 +8,8 @@ Spring Session provides a very nice solution for all of these problems. It’s a
 Servlet HTTP Session abstraction. It’s easy to plug in to any application, whether they’re Spring-based or not. 
 It acts as a sort of proxy in front of the HTTP session that forwards requests to a strategy implementation
 
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://hub.jazz.net/project/pasapples/SpringBootHTTPSession)
+
 <h2>Run locally</h2> 
 
 - Clone code as shown below.
