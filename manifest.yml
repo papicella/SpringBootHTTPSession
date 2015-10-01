@@ -1,3 +1,7 @@
+declared-services:
+  redis-session:
+    label: rediscloud
+    plan: 30mb
 applications:
  - name: pas-sbsessions
    memory: 512M
