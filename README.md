@@ -112,7 +112,91 @@ $ cf create-service rediscloud 30mb redis-session
 - Push as shown below
 
 ```
+cf push
+Using manifest file /Users/pasapicella/pivotal/DemoProjects/spring-starter/jazzhub/SpringBootHTTPSession/manifest.yml
 
+Creating app apples-sbsessions in org apples-pivotal-org / space development as papicella@pivotal.io...
+OK
+
+Creating route apples-sbsessions-unideal-pollinization.cfapps.io...
+OK
+
+Binding apples-sbsessions-unideal-pollinization.cfapps.io to apples-sbsessions...
+OK
+
+Uploading apples-sbsessions...
+Uploading app files from: /var/folders/c3/27vscm613fjb6g8f5jmc2x_w0000gp/T/unzipped-app707487435
+Uploading 1M, 131 files
+Done uploading
+OK
+Binding service redis-session to app apples-sbsessions in org apples-pivotal-org / space development as papicella@pivotal.io...
+OK
+
+Starting app apples-sbsessions in org apples-pivotal-org / space development as papicella@pivotal.io...
+Downloading nodejs_buildpack...
+Downloading java_buildpack...
+Downloading staticfile_buildpack...
+Downloading ruby_buildpack...
+Downloaded nodejs_buildpack
+Downloading python_buildpack...
+Downloaded ruby_buildpack
+Downloading php_buildpack...
+Downloading liberty_buildpack...
+Downloading binary_buildpack...
+Downloaded binary_buildpack
+Downloading go_buildpack...
+Downloaded staticfile_buildpack
+Downloaded java_buildpack
+Downloaded php_buildpack
+Downloaded python_buildpack
+Downloaded go_buildpack
+Downloaded liberty_buildpack
+Creating container
+Downloading app package...
+Successfully created container
+Downloaded app package (18.2M)
+Staging...
+-----> Java Buildpack Version: v3.8.1 (offline) | https://github.com/cloudfoundry/java-buildpack.git#29c79f2
+-----> Downloading Open Jdk JRE 1.8.0_91-unlimited-crypto from https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_91-unlimited-crypto.tar.gz (found in cache)
+       Expanding Open Jdk JRE to .java-buildpack/open_jdk_jre (1.0s)
+-----> Downloading Open JDK Like Memory Calculator 2.0.2_RELEASE from https://java-buildpack.cloudfoundry.org/memory-calculator/trusty/x86_64/memory-calculator-2.0.2_RELEASE.tar.gz (found in cache)
+       Memory Settings: -Xmx317161K -Xms317161K -XX:MetaspaceSize=64M -XX:MaxMetaspaceSize=64M -Xss228K
+-----> Downloading Spring Auto Reconfiguration 1.10.0_RELEASE from https://java-buildpack.cloudfoundry.org/auto-reconfiguration/auto-reconfiguration-1.10.0_RELEASE.jar (found in cache)
+Exit status 0
+Staging complete
+Uploading droplet, build artifacts cache...
+Uploading build artifacts cache...
+Uploading droplet...
+Uploaded build artifacts cache (109B)
+Uploading complete
+Uploaded droplet (63.8M)
+Destroying container
+Successfully destroyed container
+
+0 of 2 instances running, 2 starting
+2 of 2 instances running
+
+App started
+
+
+OK
+
+App apples-sbsessions was started using this command `CALCULATED_MEMORY=$($PWD/.java-buildpack/open_jdk_jre/bin/java-buildpack-memory-calculator-2.0.2_RELEASE -memorySizes=metaspace:64m..,stack:228k.. -memoryWeights=heap:65,metaspace:10,native:15,stack:10 -memoryInitials=heap:100%,metaspace:100% -stackThreads=300 -totMemory=$MEMORY_LIMIT) && JAVA_OPTS="-Djava.io.tmpdir=$TMPDIR -XX:OnOutOfMemoryError=$PWD/.java-buildpack/open_jdk_jre/bin/killjava.sh $CALCULATED_MEMORY" && SERVER_PORT=$PORT eval exec $PWD/.java-buildpack/open_jdk_jre/bin/java $JAVA_OPTS -cp $PWD/. org.springframework.boot.loader.JarLauncher`
+
+Showing health and status for app apples-sbsessions in org apples-pivotal-org / space development as papicella@pivotal.io...
+OK
+
+requested state: started
+instances: 2/2
+usage: 512M x 2 instances
+urls: apples-sbsessions-unideal-pollinization.cfapps.io
+last uploaded: Sat Jul 23 12:21:07 UTC 2016
+stack: unknown
+buildpack: java-buildpack=v3.8.1-offline-https://github.com/cloudfoundry/java-buildpack.git#29c79f2 java-main open-jdk-like-jre=1.8.0_91-unlimited-crypto open-jdk-like-memory-calculator=2.0.2_RELEASE spring-auto-reconfiguration=1.10.0_RELEASE
+
+     state     since                    cpu    memory           disk           details
+#0   running   2016-07-23 10:21:49 PM   0.0%   296.2M of 512M   144.1M of 1G
+#1   running   2016-07-23 10:21:53 PM   0.0%   240.6M of 512M   144.1M of 1G
 ```
 
 - Invoke using the URL you used in your manifest.yml
