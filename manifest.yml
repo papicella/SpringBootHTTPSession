@@ -6,3 +6,5 @@ applications:
    host: apples-sbsessions-${random-word}
    services:
     - redis-session
+   env:
+    JAVA_OPTS: -Djava.security.egd=file:///dev/urando
