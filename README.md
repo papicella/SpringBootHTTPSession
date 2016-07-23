@@ -202,7 +202,7 @@ buildpack: java-buildpack=v3.8.1-offline-https://github.com/cloudfoundry/java-bu
 - Invoke using the URL you used in your manifest.yml
 
 
-![alt tag](https://dl.dropboxusercontent.com/u/15829935/piv-httpsession-springboot.png)
+![alt tag](https://dl.dropboxusercontent.com/u/15829935/platform-demos/images/piv-httpsession-springboot.png)
 
 You can use the "Kill Me" link to kill the java container once you add some names to your session list, invoke the 
 application again using a new browser tab and all your session data still exists. The best test is to actually 
